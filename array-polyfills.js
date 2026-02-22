@@ -1,0 +1,28 @@
+//To get the last element of the array(like pop)
+Array.prototype.last = function () {
+  return this[this.length - 1];
+};
+
+console.log([1, 2, 3].last());
+
+//It maps twice the elements of the array
+Array.prototype.mymapTwo = function () {
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    arr.push(this[i] * 2);
+  }
+  return arr;
+};
+
+console.log([2, 5, 8, 10, 223].mymapTwo());
+
+//My Own forEach
+Array.prototype.myForEach = function(callback) {
+for(let i = 0; i < this.length; i++) {
+    callback(this[i],i,this)
+}
+};
+
+[1, 2, 3].myForEach(n=>
+    console.log(n)
+)
