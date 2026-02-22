@@ -39,3 +39,13 @@ Array.prototype.myFilter = function (callback) {
 };
 
 console.log([1, 2, 3, 4].myFilter((n) => n % 2 === 0));
+
+//My reduce
+Array.prototype.myReduce=function(callback,initialval){
+let acc=initialval
+  for (let i = 0; i < this.length; i++) {
+acc=callback(acc,this[i])
+}
+return acc
+}
+console.log([1, 2, 3, 4].myReduce((acc,current)=>acc+current,10))
